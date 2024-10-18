@@ -5,37 +5,37 @@ import pandas as pd
 import os
 
 # USING AMPLITUDES CUZ WHY NOT????
-U_in_10hz = pd.read_csv('/home/notfatnotfunny/Documents/ETH/semester3/lab/RLC/data/ALL0001/F0001CH1.CSV').iloc[:,-2]
-U_out_10hz = pd.read_csv('/home/notfatnotfunny/Documents/ETH/semester3/lab/RLC/data/ALL0001/F0001CH2.CSV').iloc[:,-2]
-time10 = pd.read_csv('/home/notfatnotfunny/Documents/ETH/semester3/lab/RLC/data/ALL0001/F0001CH1.CSV').iloc[:,3]
+U_in_10hz = pd.read_csv('./data/ALL0001/F0001CH1.CSV').iloc[:,-2]
+U_out_10hz = pd.read_csv('./data/ALL0001/F0001CH2.CSV').iloc[:,-2]
+time10 = pd.read_csv('./data/ALL0001/F0001CH1.CSV').iloc[:,3]
 max_U_in_10hz = max(U_in_10hz)
 max_U_out_10hz = max(U_out_10hz)
 
 
-U_in_100hz = pd.read_csv('/home/notfatnotfunny/Documents/ETH/semester3/lab/RLC/data/ALL0002/F0002CH1.CSV').iloc[:,-2]
-U_out_100hz = pd.read_csv('/home/notfatnotfunny/Documents/ETH/semester3/lab/RLC/data/ALL0002/F0002CH2.CSV').iloc[:,-2]
-time100 = pd.read_csv('/home/notfatnotfunny/Documents/ETH/semester3/lab/RLC/data/ALL0002/F0002CH1.CSV').iloc[:,3]
+U_in_100hz = pd.read_csv('./data/ALL0002/F0002CH1.CSV').iloc[:,-2]
+U_out_100hz = pd.read_csv('./data/ALL0002/F0002CH2.CSV').iloc[:,-2]
+time100 = pd.read_csv('./data/ALL0002/F0002CH1.CSV').iloc[:,3]
 max_U_in_100hz = max(U_in_100hz)
 max_U_out_100hz = max(U_out_100hz)
 
 
-U_in_1khz = pd.read_csv('/home/notfatnotfunny/Documents/ETH/semester3/lab/RLC/data/ALL0003/F0003CH1.CSV').iloc[:,-2]
-U_out_1khz = pd.read_csv('/home/notfatnotfunny/Documents/ETH/semester3/lab/RLC/data/ALL0003/F0003CH2.CSV').iloc[:,-2]
-time1k = pd.read_csv('/home/notfatnotfunny/Documents/ETH/semester3/lab/RLC/data/ALL0003/F0003CH1.CSV').iloc[:,3]
+U_in_1khz = pd.read_csv('./data/ALL0003/F0003CH1.CSV').iloc[:,-2]
+U_out_1khz = pd.read_csv('./data/ALL0003/F0003CH2.CSV').iloc[:,-2]
+time1k = pd.read_csv('./data/ALL0003/F0003CH1.CSV').iloc[:,3]
 max_U_in_1khz = max(U_in_1khz)
 max_U_out_1khz = max(U_out_1khz)
 
 
-U_in_10khz = pd.read_csv('/home/notfatnotfunny/Documents/ETH/semester3/lab/RLC/data/ALL0005/F0005CH1.CSV').iloc[:,-2]
-U_out_10khz = pd.read_csv('/home/notfatnotfunny/Documents/ETH/semester3/lab/RLC/data/ALL0005/F0005CH2.CSV').iloc[:,-2]
-time10k = pd.read_csv('/home/notfatnotfunny/Documents/ETH/semester3/lab/RLC/data/ALL0005/F0005CH1.CSV').iloc[:,3]
+U_in_10khz = pd.read_csv('./data/ALL0005/F0005CH1.CSV').iloc[:,-2]
+U_out_10khz = pd.read_csv('./data/ALL0005/F0005CH2.CSV').iloc[:,-2]
+time10k = pd.read_csv('./data/ALL0005/F0005CH1.CSV').iloc[:,3]
 max_U_in_10khz = max(U_in_10khz)
 max_U_out_10khz = max(U_out_10khz)
 
 
-U_in_100khz = pd.read_csv('/home/notfatnotfunny/Documents/ETH/semester3/lab/RLC/data/ALL0006/F0006CH1.CSV').iloc[:,-2]
-U_out_100khz = pd.read_csv('/home/notfatnotfunny/Documents/ETH/semester3/lab/RLC/data/ALL0006/F0006CH2.CSV').iloc[:,-2]
-time100k = pd.read_csv('/home/notfatnotfunny/Documents/ETH/semester3/lab/RLC/data/ALL0006/F0006CH1.CSV').iloc[:,3]
+U_in_100khz = pd.read_csv('./data/ALL0006/F0006CH1.CSV').iloc[:,-2]
+U_out_100khz = pd.read_csv('./data/ALL0006/F0006CH2.CSV').iloc[:,-2]
+time100k = pd.read_csv('./data/ALL0006/F0006CH1.CSV').iloc[:,3]
 max_U_in_100khz = max(U_in_100khz)
 max_U_out_100khz = max(U_out_100khz)
 
@@ -140,8 +140,9 @@ ax2.set_ylabel(r'Phase shift($\varphi$)', color = '#a502f7')
 ax2.tick_params(axis='y')
 fig.tight_layout()
 plt.savefig('/tmp/transferFx.png')
-os.system("echo '#3.5:'")
-os.system("kitty +kitten icat /tmp/transferFx.png")
+plt.show()
+# os.system("echo '#3.5:'")
+# os.system("kitty +kitten icat /tmp/transferFx.png")
 print(f'''
 the phase shift at the cut-off frequency is very small (0)''')
 
